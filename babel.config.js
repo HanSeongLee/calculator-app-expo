@@ -7,7 +7,10 @@ module.exports = function(api) {
           alias: {
             components: './src/components',
             containers: './src/containers',
-            screens: './src/screens'
+            screens: './src/screens',
+            lib: './lib',
+            styles: './styles',
+            types: './types'
           }
         }]
     ]
