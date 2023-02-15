@@ -1,5 +1,6 @@
 import { Theme } from '../types/theme';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 export enum ActionType {
     CHANGE_THEME,
@@ -7,7 +8,7 @@ export enum ActionType {
 
 const initialValue = {
     theme: Theme.THEME_1,
-    dispatch: (actionType: ActionType, payload: unknown) => {},
+    dispatch: async (actionType: ActionType, payload: unknown) => {},
 };
 
 interface IProps {
@@ -17,19 +18,32 @@ interface IProps {
 export const ThemeContextWrapper: React.FC<IProps> = ({ children }) => {
     const [value, setValue] = useState(initialValue);
 
-    const dispatch = (actionType: ActionType, payload: unknown) => {
+    const dispatch = async (actionType: ActionType, payload: unknown) => {
         switch (actionType) {
             case ActionType.CHANGE_THEME: {
+                const theme = payload as Theme;
                 setValue({
                     ...value,
-                    theme: payload as Theme,
+                    theme,
                 });
+                await AsyncStorage.setItem('theme', theme);
                 return;
             }
             default:
                 return;
         }
     };
+
+    const loadTheme = async () => {
+        const theme = await AsyncStorage.getItem('theme');
+        if (theme !== null) {
+            await dispatch(ActionType.CHANGE_THEME, theme);
+        }
+    };
+
+    useEffect(() => {
+        loadTheme();
+    }, [])
 
     return (
         <ThemeContext.Provider value={{

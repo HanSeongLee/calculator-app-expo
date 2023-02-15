@@ -6,8 +6,8 @@ import { ThemeOptions } from 'types/theme';
 const ThemeToggleButtonContainer: React.FC = () => {
     const { theme, dispatch } = useContext(ThemeContext);
 
-    const onChangeValue = (value: string) => {
-        dispatch(ActionType.CHANGE_THEME, value);
+    const onChangeValue = async (value: string) => {
+        await dispatch(ActionType.CHANGE_THEME, value);
     };
 
     return (
