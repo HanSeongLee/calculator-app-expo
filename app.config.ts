@@ -1,6 +1,6 @@
-{
+export default {
   "expo": {
-    "name": "Calculator-devComma",
+    "name": "Calculator-devcomma",
     "slug": "calculator-app",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -18,13 +18,15 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.devcomma.calculator"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
-      }
+      },
+      "package": "com.devcomma.calculator"
     },
     "web": {
       "favicon": "./assets/favicon.png"
