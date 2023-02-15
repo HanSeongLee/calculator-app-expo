@@ -1,7 +1,7 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
 import * as Font from 'expo-font';
 import { useEffect, useState } from 'react';
+import { ThemeContextWrapper } from './lib/ThemeContext';
+import CalculatorScreen from 'screens/CalculatorScreen';
 
 export default function App() {
   const [fontsLoaded, setFontsLoaded] = useState(false);
@@ -21,19 +21,10 @@ export default function App() {
     return null;
   }
 
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
-}
+    return (
+        <ThemeContextWrapper>
+            <CalculatorScreen />
+        </ThemeContextWrapper>
+    );
+};
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
