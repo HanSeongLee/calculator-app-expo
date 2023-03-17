@@ -1,6 +1,7 @@
 {
   "cli": {
-    "version": ">= 3.6.0"
+    "version": ">= 3.6.0",
+    "appVersionSource": "local"
   },
   "build": {
     "development": {
@@ -19,7 +20,8 @@
     "production": {
       "ios": {
         "resourceClass": "m1-medium"
-      }
+      },
+      "autoIncrement": true
     }
   },
   "submit": {
