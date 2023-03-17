@@ -69,7 +69,7 @@ const createStyles = (theme: Theme, maxIndex: number) =>
         },
         default: {
             fontSize: 12,
-            lineHeight: 11,
+            lineHeight: 11 * 1.2,
             textAlign: 'center',
             letterSpacing: 1,
             color: ThemeColor[theme].themeTextColor,

@@ -37,7 +37,7 @@ const createStyles = (theme: Theme) =>
         text: {
             maxHeight: 88,
             fontSize: 40,
-            lineHeight: 37,
+            lineHeight: 37 * 1.2,
             letterSpacing: -0.67,
             color: ThemeColor[theme].themeTextColor,
             textAlign: 'right',

@@ -85,7 +85,7 @@ const createStyles = (theme: Theme, variant: ButtonVariant) =>
         },
         text: {
             fontSize: variant === 'primary' || variant === 'secondary' ? 20 : 32,
-            lineHeight: variant === 'primary' || variant === 'secondary' ? 18 : 29,
+            lineHeight: variant === 'primary' || variant === 'secondary' ? 18 * 1.2 : 29 * 1.2,
             textTransform: variant === 'primary' || variant === 'secondary' ? 'uppercase' : 'none',
             color: textColor(theme, variant),
             marginTop: 5,

@@ -37,7 +37,7 @@ const createStyles = (theme: Theme) =>
             paddingBottom: 32,
         },
         text: {
-            lineHeight: 29,
+            lineHeight: 29 * 1.2,
             textAlign: 'center',
             letterSpacing: -0.53,
             color: ThemeColor[theme].themeTextColor,
