@@ -1,7 +1,7 @@
 import React, { useContext, useMemo } from 'react';
 import Header from 'components/Header';
 import Container from 'components/Container';
-import { SafeAreaView, StyleSheet } from 'react-native';
+import { Platform, SafeAreaView, StyleSheet, StatusBar as NativeStatusBar } from 'react-native';
 import { StatusBar, StatusBarStyle } from 'expo-status-bar';
 import { Theme } from 'types/theme';
 import { ThemeColor } from '../../styles/theme-color';
@@ -29,6 +29,7 @@ const createStyles = (theme: Theme) =>
             flex: 1,
             color: ThemeColor[theme].themeTextColor,
             backgroundColor: ThemeColor[theme].themeBackgroundColor,
+            paddingTop: Platform.OS === "android" ? NativeStatusBar.currentHeight : 0
         }
     });
 
